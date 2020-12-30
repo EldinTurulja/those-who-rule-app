@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for those who rule site",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EldinTurulja/those-who-rule-app.git"
+  },
+  "author": "Eldin Turulja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EldinTurulja/those-who-rule-app/issues"
+  },
+  "homepage": "https://github.com/EldinTurulja/those-who-rule-app#readme"
+}

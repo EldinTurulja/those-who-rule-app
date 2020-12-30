@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  frontend:
+    container_name: those_who_rule_web
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: eturulja/those_who_rule_web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/usr/src/app
+  backend:
+    container_name: those_who_rule_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: eturulja/those_who_rule_server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/usr/src/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
+
+volumes:
+  mysql-data:
